@@ -1,6 +1,8 @@
 """Test the trade functions."""
 from __future__ import annotations
 
+import pytest
+import requests
 import responses
 
 from thetagang import trades
@@ -30,5 +32,6 @@ def test_trade_invalid():
         f"https://api.thetagang.com/trades/{trade_id}",
         status=404,
     )
-    result = trades.trade(trade_id)
-    assert result == {}
+    with pytest.raises(requests.exceptions.HTTPError):
+        result = trades.trade(trade_id)
+        assert result == {}
