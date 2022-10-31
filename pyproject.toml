@@ -23,6 +23,7 @@ responses = "^0.22.0"
 pytest-xdist = "^3.0.2"
 pytest-cov = "^4.0.0"
 types-requests = "^2.28.11.2"
+exceptiongroup = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]
