@@ -1,6 +1,7 @@
 """Test the trade functions."""
+from __future__ import annotations
+
 import responses
-from unittest.mock import patch
 
 from thetagang import trades
 
@@ -30,4 +31,4 @@ def test_trade_invalid():
         status=404,
     )
     result = trades.trade(trade_id)
-    assert result is None
+    assert result == {}
